@@ -1,6 +1,7 @@
 import { Preloader } from '@ui';
 import React from 'react';
-import { Navigate, Outlet } from 'react-router-dom';
+import { Navigate, useLocation } from 'react-router-dom';
+import { useSelector } from '../../services/store';
 
 type ProtectedRouteProps = {
   onlyUnAuth?: boolean;
@@ -8,19 +9,19 @@ type ProtectedRouteProps = {
 };
 
 export const ProtectedRoute = ({
-  onlyUnAuth,
+  onlyUnAuth = false,
   children
 }: ProtectedRouteProps) => {
-  // TODO: implement me
-  const isAuthChecked = false;
-  const user = false;
+  const location = useLocation();
+  const isAuthChecked = useSelector((state) => state.user.isAuthChecked);
+  const user = useSelector((state) => state.user.user);
 
-  // if (!isAuthChecked) {
-  //   return <Preloader />;
-  // }
+  if (!isAuthChecked) {
+    return <Preloader />;
+  }
 
-  if (!onlyUnAuth && !user) {
-    return <Navigate replace to='/login' />;
+  if (!onlyUnAuth && user) {
+    return <Navigate to='/login' state={{ from: location }} />;
   }
 
   if (onlyUnAuth && user) {

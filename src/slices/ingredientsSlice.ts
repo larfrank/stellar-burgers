@@ -1,7 +1,6 @@
 import { getIngredientsApi } from '@api';
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import { TIngredient } from '@utils-types';
-import { INGREDIENT_TYPES } from '../utils/constansts';
 
 export const getIngredients = createAsyncThunk('ingredients/getall', async () =>
   getIngredientsApi()
