@@ -148,11 +148,9 @@ export const userSlice = createSlice({
     builder
       .addCase(getUser.pending, (state) => {
         state.isLoading = true;
-        state.error = null;
       })
       .addCase(getUser.rejected, (state, action) => {
         state.isLoading = false;
-        state.error = action.error.message ?? null;
         state.isAuthChecked = true;
       })
       .addCase(getUser.fulfilled, (state, action) => {

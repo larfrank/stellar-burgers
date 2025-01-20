@@ -20,7 +20,7 @@ export const ProtectedRoute = ({
     return <Preloader />;
   }
 
-  if (!onlyUnAuth && user) {
+  if (!onlyUnAuth && !user) {
     return <Navigate to='/login' state={{ from: location }} />;
   }
 
