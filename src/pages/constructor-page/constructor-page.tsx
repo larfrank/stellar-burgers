@@ -7,7 +7,9 @@ import { FC } from 'react';
 import { getUser } from '../../slices/userSlice';
 
 export const ConstructorPage: FC = () => {
-  /** TODO: взять переменную из стора */
+  // const isIngredientsLoading = useSelector(
+  //   (state) => state.ingredients.isLoading
+  // );
   const isIngredientsLoading = false;
 
   return (

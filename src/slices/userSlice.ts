@@ -80,14 +80,10 @@ export const userSlice = createSlice({
       })
       .addCase(loginUser.fulfilled, (state, action) => {
         state.isLoading = false;
-        if (action.payload.success) {
-          state.user = action.payload.user;
-          state.error = null;
-          localStorage.setItem('refreshToken', action.payload.refreshToken);
-          setCookie('accessToken', action.payload.accessToken);
-        } else {
-          state.error = 'Не получилось войти';
-        }
+        state.user = action.payload.user;
+        state.error = null;
+        localStorage.setItem('refreshToken', action.payload.refreshToken);
+        setCookie('accessToken', action.payload.accessToken);
       });
 
     builder
@@ -98,18 +94,13 @@ export const userSlice = createSlice({
       .addCase(registerUser.rejected, (state, action) => {
         state.isLoading = false;
         state.error = action.error.message ?? null;
-        console.log('rejected');
       })
       .addCase(registerUser.fulfilled, (state, action) => {
         state.isLoading = false;
-        if (action.payload.success) {
-          state.user = action.payload.user;
-          state.error = null;
-          localStorage.setItem('refreshToken', action.payload.refreshToken);
-          setCookie('accessToken', action.payload.accessToken);
-        } else {
-          state.error = 'Не получилось зарегистрироваться';
-        }
+        state.user = action.payload.user;
+        state.error = null;
+        localStorage.setItem('refreshToken', action.payload.refreshToken);
+        setCookie('accessToken', action.payload.accessToken);
       });
 
     builder
@@ -123,12 +114,8 @@ export const userSlice = createSlice({
       })
       .addCase(updateUser.fulfilled, (state, action) => {
         state.isLoading = false;
-        if (action.payload.success) {
-          state.user = action.payload.user;
-          state.error = null;
-        } else {
-          state.error = 'Не получилось обновить данные';
-        }
+        state.user = action.payload.user;
+        state.error = null;
       });
 
     builder

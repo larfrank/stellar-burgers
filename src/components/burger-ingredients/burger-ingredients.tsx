@@ -12,7 +12,9 @@ import { INGREDIENT_TYPES } from '../../utils/constansts';
 
 export const BurgerIngredients: FC = () => {
   const dispatch = useDispatch();
-  dispatch(getIngredients());
+  useEffect(() => {
+    dispatch(getIngredients());
+  });
 
   const ingredients = useSelector(getIngredientsSelector);
 
@@ -64,8 +66,6 @@ export const BurgerIngredients: FC = () => {
     if (tab === 'sauce')
       titleSaucesRef.current?.scrollIntoView({ behavior: 'smooth' });
   };
-
-  //return null;
 
   return (
     <BurgerIngredientsUI
