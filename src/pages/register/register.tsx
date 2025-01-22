@@ -1,7 +1,6 @@
 import { FC, SyntheticEvent, useState } from 'react';
 import { RegisterUI } from '@ui-pages';
-import { AppDispatch, useSelector } from '../../services/store';
-import { useDispatch } from 'react-redux';
+import { AppDispatch, useSelector, useDispatch } from '../../services/store';
 import { useNavigate } from 'react-router-dom';
 import { registerUser } from '../../slices/userSlice';
 
