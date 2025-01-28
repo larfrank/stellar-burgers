@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1738005685450" clover="3.2.0">
-  <project timestamp="1738005685450" name="All files">
-    <metrics statements="685" coveredstatements="488" conditionals="47" coveredconditionals="42" methods="30" coveredmethods="9" elements="762" coveredelements="539" complexity="0" loc="685" ncloc="685" packages="2" files="6" classes="6"/>
+<coverage generated="1738054407982" clover="3.2.0">
+  <project timestamp="1738054407982" name="All files">
+    <metrics statements="687" coveredstatements="490" conditionals="47" coveredconditionals="42" methods="30" coveredmethods="9" elements="764" coveredelements="541" complexity="0" loc="687" ncloc="687" packages="2" files="6" classes="6"/>
     <package name="slices">
       <metrics statements="398" coveredstatements="371" conditionals="42" coveredconditionals="41" methods="12" coveredmethods="8"/>
       <file name="feedSlice.ts" path="C:\Users\larac\OneDrive - Южный Федеральный Университет\Рабочий стол\practicum\stellar-burgers\src\slices\feedSlice.ts">
@@ -413,7 +413,7 @@
       </file>
     </package>
     <package name="utils">
-      <metrics statements="287" coveredstatements="117" conditionals="5" coveredconditionals="1" methods="18" coveredmethods="1"/>
+      <metrics statements="289" coveredstatements="119" conditionals="5" coveredconditionals="1" methods="18" coveredmethods="1"/>
       <file name="burger-api.ts" path="C:\Users\larac\OneDrive - Южный Федеральный Университет\Рабочий стол\practicum\stellar-burgers\src\utils\burger-api.ts">
         <metrics statements="235" coveredstatements="85" conditionals="0" coveredconditionals="0" methods="15" coveredmethods="0"/>
         <line num="1" count="1" type="stmt"/>
@@ -653,12 +653,14 @@
         <line num="235" count="0" type="stmt"/>
       </file>
       <file name="constansts.ts" path="C:\Users\larac\OneDrive - Южный Федеральный Университет\Рабочий стол\practicum\stellar-burgers\src\utils\constansts.ts">
-        <metrics statements="5" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <metrics statements="7" coveredstatements="7" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
         <line num="3" count="1" type="stmt"/>
         <line num="4" count="1" type="stmt"/>
         <line num="5" count="1" type="stmt"/>
+        <line num="6" count="1" type="stmt"/>
+        <line num="7" count="1" type="stmt"/>
       </file>
       <file name="cookie.ts" path="C:\Users\larac\OneDrive - Южный Федеральный Университет\Рабочий стол\practicum\stellar-burgers\src\utils\cookie.ts">
         <metrics statements="47" coveredstatements="27" conditionals="5" coveredconditionals="1" methods="3" coveredmethods="1"/>

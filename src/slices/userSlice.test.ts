@@ -4,18 +4,12 @@ import {
   loginUser,
   logoutUser,
   registerUser,
-  updateUser
+  updateUser,
+  initialState
 } from './userSlice';
 import { expect } from '@jest/globals';
 
 describe('User Reducer - getUser', () => {
-  const initialState = {
-    user: null,
-    isLoading: false,
-    isAuthChecked: false,
-    error: null
-  };
-
   it('should handle getUser.pending', () => {
     const action = { type: getUser.pending.type };
     const state = userReducer(initialState, action);
@@ -51,14 +45,6 @@ describe('User Reducer - getUser', () => {
 });
 
 describe('userSlice reducers', () => {
-  // Начальное состояние
-  const initialState = {
-    user: null,
-    isLoading: false,
-    isAuthChecked: false,
-    error: null
-  };
-
   it('should handle loginUser.pending', () => {
     const action = { type: loginUser.pending.type };
     const state = userReducer(initialState, action);
@@ -99,7 +85,7 @@ describe('userSlice reducers', () => {
 
 describe('User Reducer - logoutUser', () => {
   const initialState = {
-    user: { name: 'Test User', email: 'test@example.com' }, // Пример начального состояния с пользователем
+    user: { name: 'Test User', email: 'test@example.com' },
     isLoading: false,
     isAuthChecked: false,
     error: null
@@ -132,13 +118,6 @@ describe('User Reducer - logoutUser', () => {
 });
 
 describe('User Reducer - registerUser', () => {
-  const initialState = {
-    user: null,
-    isLoading: false,
-    isAuthChecked: false,
-    error: null
-  };
-
   it('should handle registerUser.pending', () => {
     const action = { type: registerUser.pending.type };
     const state = userReducer(initialState, action);
@@ -154,7 +133,7 @@ describe('User Reducer - registerUser', () => {
         name: 'Test User',
         email: 'test@example.com'
       }
-    }; // Example user data
+    };
     const action = { type: registerUser.fulfilled.type, payload: mockUser };
     const state = userReducer({ ...initialState, isLoading: true }, action);
 
@@ -173,13 +152,6 @@ describe('User Reducer - registerUser', () => {
 });
 
 describe('User Reducer - updateUser', () => {
-  const initialState = {
-    user: null,
-    isLoading: false,
-    isAuthChecked: false,
-    error: null
-  };
-
   it('should handle updateUser.pending', () => {
     const action = { type: updateUser.pending.type };
     const state = userReducer(initialState, action);

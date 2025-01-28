@@ -3,6 +3,7 @@
 describe('Checking the addition of ingredients', () => {
   const ingredientSelector = '[data-cy="ingredient"]';
   const ingredientModalSelector = '[data-cy="ingredient-modal"]';
+  const testUrl = 'http://localhost:4000/';
 
   beforeEach(() => {
     cy.intercept('GET', '/api/ingredients', { fixture: 'ingredients.json' }).as(
@@ -15,14 +16,14 @@ describe('Checking the addition of ingredients', () => {
     window.localStorage.setItem('refreshToken', 'testRefreshToken');
     cy.setCookie('accessToken', 'testAccessToken');
 
-    cy.visit('http://localhost:4000/');
+    cy.visit(testUrl);
 
     cy.wait('@getIngredients');
     cy.wait('@getUser');
   });
 
   it('the service must be available at localhost:4000', () => {
-    cy.url().should('eq', 'http://localhost:4000/');
+    cy.url().should('eq', testUrl);
   });
 
   it('it is possible to add ingredients', () => {

@@ -46,18 +46,6 @@ describe('Feed Slice Reducer - createOrder', () => {
 });
 
 describe('Feed Slice Reducer - fetchOrders', () => {
-  const initialState = {
-    selectedOrderId: null,
-    feed: {
-      orders: [],
-      total: 0,
-      totalToday: 0
-    },
-    order: null,
-    isLoading: false,
-    error: null
-  };
-
   it('should set isLoading to true when fetchOrders is pending', () => {
     const action = { type: fetchOrders.pending.type };
     const newState = reducer(initialState, action);
@@ -101,18 +89,6 @@ describe('Feed Slice Reducer - fetchOrders', () => {
 });
 
 describe('Feed Slice Reducer - fetchOrdersById', () => {
-  const initialState = {
-    selectedOrderId: null,
-    feed: {
-      orders: [],
-      total: 0,
-      totalToday: 0
-    },
-    order: null,
-    isLoading: false,
-    error: null
-  };
-
   it('should set isLoading to true when fetchOrdersById is pending', () => {
     const action = { type: fetchOrdersById.pending.type };
     const newState = reducer(initialState, action);
@@ -146,18 +122,6 @@ describe('Feed Slice Reducer - fetchOrdersById', () => {
 });
 
 describe('Feed Slice Reducer - getUserOrders', () => {
-  const initialState = {
-    selectedOrderId: null,
-    feed: {
-      orders: [],
-      total: 0,
-      totalToday: 0
-    },
-    order: null,
-    isLoading: false,
-    error: null
-  };
-
   it('should set isLoading to true when getUserOrders is pending', () => {
     const action = { type: getUserOrders.pending.type };
     const newState = reducer(initialState, action);
