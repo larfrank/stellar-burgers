@@ -1,4 +1,4 @@
-import { getIngredientsApi } from '@api';
+import { getIngredientsApi } from '../utils/burger-api';
 import { createAsyncThunk, createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { TConstructorIngredient, TIngredient } from '@utils-types';
 import { INGREDIENT_TYPES } from '../utils/constansts';
@@ -88,7 +88,7 @@ const ingredientsSlice = createSlice({
         state.error = null;
       })
       .addCase(getIngredients.rejected, (state, action) => {
-        state.error = action.error.message ?? null;
+        state.error = action.payload as string;
         state.isLoading = false;
         state.ingredients = [];
       })

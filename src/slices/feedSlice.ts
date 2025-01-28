@@ -3,7 +3,7 @@ import {
   getOrderByNumberApi,
   getOrdersApi,
   orderBurgerApi
-} from '@api';
+} from '../utils/burger-api';
 import {
   createAsyncThunk,
   createSelector,
